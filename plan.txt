@@ -1,0 +1,1 @@
+simple shopping website with item search, and a cart for selected items

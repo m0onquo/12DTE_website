@@ -1,19 +1,29 @@
-body {
+body { /*  */
     display: flex;
     background-color: rgb(31, 31, 31);
     size: 100vh;
     flex-direction: column;
 }
-nav {
+nav { /* Navbar layout and colors */
     background-color: rgb(51, 51, 51);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 50px;
+    border-radius: 15px;
 }
-nav button {
-    padding-left: 20px;
+nav h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 25px;
 }
 nav .search_bar {
     display: flex;
-    flex-direction: ;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 25px;
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 225px;
 }
