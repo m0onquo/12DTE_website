@@ -12,10 +12,18 @@ globalstuff = {
     "ITEM_COUNT": "12" #placeholder
 }
 
-@app.route('/')
+@app.route('/') # Flask lwk confusing i cant link css or html how it's normally done
 def home():
     return render_template('home.html', **globalstuff)
 #end
+@app.route('/about')
+def about():
+    return render_template('about.html', **globalstuff)
+
+@app.route('/shop')
+def shop():
+    return render_template('shop.html', **globalstuff)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

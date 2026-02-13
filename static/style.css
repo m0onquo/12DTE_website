@@ -61,7 +61,7 @@ nav h2 {
     gap: 10px;
 }
 .cart_button img {
-    display: block;
+    display: inline-block;
     width: 25px;
     height: 30px;
 }
@@ -70,10 +70,10 @@ nav h2 {
 
     margin: 0; /* remove the annoying default top and bottom space (that has managed to screw me over multiple times, left me unsure why there was werid spacing when tryna use outlines) */
 
-    padding-left: 4px;
+    padding-left: 6px;
     padding-right: 6px;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     text-decoration: none;
     font-weight: 400;
