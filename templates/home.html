@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ USERNAME }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- I hate having to use url_for it just slightly confuses me -->
+</head>
+<body>
+    <nav> 
+        <h2> NCEA test store </h2>
+        <div class = "navbar_links">
+            <a href="#"> <h3> Home </h3> </a>
+            <a href=""> <h3> About </h3> </a>
+            <a href=""> <h3> Shop<span class="shoplink_dropdownarrow">⏷</span> </h3> </a>
+        </div>
+        <div class="cart_button">
+            <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </span> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
+            <h3 class="ITEM_PRICE"> {{ ITEM_COUNT }} </h3> <!-- all caps for class, because for all elements that use class for variables later on ill use all caps -->
+        </div>
+    </nav>
+    <div name="main">
+
+    </div>
+</body>
+</html>

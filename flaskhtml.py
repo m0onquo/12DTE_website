@@ -7,12 +7,14 @@ app = Flask(__name__)
 username = os.getlogin()
 globalstuff = {
     "NAME": __name__,
-    "USERNAME": username
+    "USERNAME": username,
+
+    "ITEM_COUNT": "12" #placeholder
 }
 
 @app.route('/')
 def home():
-    return render_template('webpage.html', **globalstuff)
+    return render_template('home.html', **globalstuff)
 #end
 
 if __name__ == '__main__':
