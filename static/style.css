@@ -6,13 +6,13 @@ body {
 nav {
     display: flex;
     align-items: center;
-    background-color: aliceblue;
+    background-color: rgb(255, 215, 196);
     min-height: 5vh;
     height: 5vh;
     padding: 0 20px; /* spacing between the shop name text and the text buttons */
 
     outline-width: 15px;
-    outline-color: rgb(31, 31, 31);
+    outline-color:bisque;
     outline-style: ridge;
 }
 nav h2 {
@@ -24,16 +24,15 @@ nav h2 {
     font-style: italic;
     font-weight: 400;
     overflow: hidden;
+    margin-right: 5%;
 }  
 
 .navbar_links {
-    margin-left: 5rem;
     margin-right: auto;
     display: flex;
     gap: 20px;
 }
-.navbar_links a, .navbar_links a h3 {
-    display: flex;
+.navbar_links a{
     color: rgb(31, 31, 31);
     border-radius: 10px;
 
@@ -46,43 +45,37 @@ nav h2 {
 
 .navbar_links a:hover {
     text-shadow: 0 0 20px rgb(31, 31, 31);
-    size: 20px;
+}
+.cart {
+    display: flex;
+    align-items: center; 
+    gap: 15px;
 }
 .cart_button{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    margin-left: auto;
-
-    outline-style: solid;
-    outline-color: black;
-    outline-width: 2px;
-    outline-offset: 0.5vh;
     border-radius: 5px;
 
     gap: 10px;
 }
 .cart_button img {
     display: inline-block;
-    width: 4vh;
-    height: 3vh;
+    width: 28px;
+    height: 28px;
 }
 .cart_button h3 {
     display: block;
 
     margin: 0; /* remove the annoying default top and bottom space (that has managed to screw me over multiple times, left me unsure why there was werid spacing when tryna use outlines) */
-
-    padding-left: 0.4vw;
-    padding-right: 0.4vw;
-
+    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     text-decoration: none;
     font-weight: 400;
 
-    background-color: black;
-    color: aliceblue;
-    border-radius: 10px;
+    color: black;
 }
-.shoplink_dropdownarrow {
-    font-size: 15px;
+.search_bar input{
+    border-radius: 5px;
 }

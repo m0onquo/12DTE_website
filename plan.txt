@@ -1,1 +1,100 @@
 simple shopping website with item search, and a cart for selected items
+
+
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0; /* Removes the gap between top of the page and navbar */
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    min-height: 5vh;
+    height: 5vh;
+    padding: 0 20px; /* spacing between the shop name text and the text buttons */
+
+    outline-width: 15px;
+    outline-color: rgb(31, 31, 31);
+    outline-style: ridge;
+}
+nav h2 {
+
+    color: rgb(31, 31, 31);
+    border-radius: 10px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    overflow: hidden;
+}  
+
+.navbar_links {
+    margin-left: 5rem;
+    margin-right: auto;
+    display: flex;
+    gap: 20px;
+}
+.navbar_links a, .navbar_links a h3 {
+    display: flex;
+    color: rgb(31, 31, 31);
+    border-radius: 10px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-decoration: none;
+    font-weight: 400;
+}
+/* Now I'll add some cool hover effects to the links on the webpage! */
+
+.navbar_links a:hover {
+    text-shadow: 0 0 20px rgb(31, 31, 31);
+    size: 20px;
+}
+.cart_button{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 2px;
+    outline-offset: 0.5vh;
+    border-radius: 5px;
+
+    gap: 10px;
+}
+.cart_button img {
+    display: inline-block;
+    width: 4vh;
+    height: 3vh;
+}
+.cart_button h3 {
+    display: block;
+
+    margin: 0; /* remove the annoying default top and bottom space (that has managed to screw me over multiple times, left me unsure why there was werid spacing when tryna use outlines) */
+
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    text-decoration: none;
+    font-weight: 400;
+
+    background-color: black;
+    color: aliceblue;
+    border-radius: 10px;
+}
+.shoplink_dropdownarrow {
+    font-size: 15px;
+}

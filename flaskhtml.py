@@ -16,10 +16,6 @@ globalstuff = {
 def home():
     return render_template('home.html', **globalstuff)
 #end
-@app.route('/about')
-def about():
-    return render_template('about.html', **globalstuff)
-
 @app.route('/shop')
 def shop():
     return render_template('shop.html', **globalstuff)

@@ -10,13 +10,17 @@
     <nav> 
         <h2> NCEA test store </h2>
         <div class = "navbar_links">
-            <a href="{{ url_for('home') }}"> <h3> Home </h3> </a>
-            <a href="{{ url_for('about') }}"> <h3> About </h3> </a>
-            <a href="#"> <h3> Shop<span class="shoplink_dropdownarrow">⏷</span> </h3> </a>
+            <a href="{{ url_for('home') }}">Home </a>
+            <a href="#">Shop <span class="dropdown">⏷</span></a>
         </div>
-        <div class="cart_button">
-            <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </span> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
-            <h3 class="ITEM_PRICE"> {{ ITEM_COUNT }} </h3> <!-- all caps for class, because for all elements that use class for variables later on ill use all caps -->
+        <div class="cart">
+            <div class="cart_button">
+                <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </span> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
+                <h3 class="ITEM_PRICE"> {{ ITEM_COUNT }} </h3> <!-- all caps for class, because for all elements that use class for variables later on ill use all caps -->
+            </div>
+            <div class="search_bar">
+                <input type="text">
+            </div>
         </div>
     </nav>
     <div name="main">
