@@ -3,24 +3,29 @@ body {
     height: 100vh;
 }
 
+
+/* Navbar Stuff */
 nav {
     display: flex;
     align-items: center;
-    background-color: rgb(255, 215, 196);
-    min-height: 5vh;
-    height: 5vh;
-    padding: 0 20px; /* spacing between the shop name text and the text buttons */
+    background-color:snow;
+    min-height: 4vh;
+    height: 4vh;
+    padding: 0 3rem; /* spacing between the shop name text and the text buttons */
 
-    outline-width: 15px;
-    outline-color:bisque;
-    outline-style: ridge;
+    outline: 10px ridge cornflowerblue;
+}
+nav img { /* Just the crown logo */
+    width: 32px;
+    height: 32px;
+    padding-right: 15px;
 }
 nav h2 {
 
     color: rgb(31, 31, 31);
     border-radius: 10px;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     font-weight: 400;
     overflow: hidden;
@@ -36,16 +41,20 @@ nav h2 {
     color: rgb(31, 31, 31);
     border-radius: 10px;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     text-decoration: none;
     font-weight: 400;
+    font-size: 1.2rem;
 }
 /* Now I'll add some cool hover effects to the links on the webpage! */
-
 .navbar_links a:hover {
-    text-shadow: 0 0 20px rgb(31, 31, 31);
+    color:cornflowerblue;
+    text-shadow: 0 0 20px cornflowerblue;
 }
+
+
+/* Cart Stuff */
 .cart {
     display: flex;
     align-items: center; 
@@ -76,6 +85,51 @@ nav h2 {
 
     color: black;
 }
-.search_bar input{
+
+/* Searchbar Stuff */
+.search_bar input, button{
     border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+.search_bar {
+    margin-right: 10px;
+}
+/* Shop Button Dropdown Items */
+.dropdown_menu {
+    position: relative;
+    display: inline-block;
+}
+.shop_dropdown {
+    display: none;
+    position: absolute;
+    
+    outline: 2px ridge black;
+    border-radius: 5px;
+    background-color: snow;
+
+    padding: 0;
+
+    /* I had to ask ChatGPT about these, absolutely no clue what it does but it fixes the dropdown menu closing issue */
+    top: 100%;
+    left: 0;
+    margin: 0;
+    z-index: 100;
+}
+.dropdown_menu:hover .shop_dropdown {
+    display: block;
+}
+
+.shop_dropdown li { /* Style the elements in the dropdown menu */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+
+    list-style: none;
+    white-space: nowrap;
+    padding: 10px 15px;
+    
+}
+.shop_dropdown li:hover { /* Cool hover effect too! */
+    color:cornflowerblue;
+    text-shadow: 0 0 20px cornflowerblue;
 }

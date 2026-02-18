@@ -16,10 +16,17 @@ globalstuff = {
 def home():
     return render_template('home.html', **globalstuff)
 #end
+
 @app.route('/shop')
 def shop():
     return render_template('shop.html', **globalstuff)
+#end
 
+@app.route('/search', methods = ["POST"])
+def search():
+    searched = request.form.get("SEARCH_BOX").strip()
+    return render_template('search.html', **globalstuff, SEARCH_QUERY = searched)
+#end
 
 if __name__ == '__main__':
     app.run(debug=True)

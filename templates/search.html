@@ -11,7 +11,7 @@
         <img src="{{ url_for('static', filename='images/crown_logo.png') }}" alt="Crown Logo">
         <h2> Crown Jewels </h2>
         <div class = "navbar_links">
-            <a href="#">Home</a>
+            <a href="{{ url_for('home') }}">Home</a>
 
             <div class="dropdown_menu">
                 <a href="{{ url_for('shop') }}">Shop <span class="dropdown">⏷</span> </a>
@@ -35,7 +35,7 @@
         </div>
     </nav>
     <div name="main">
-        <h1> Sigma Digma Homepage </h1>
+        <h1>  ref: {{ SEARCH_QUERY }} </h1>
     </div>
 </body>
 </html>
