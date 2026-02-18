@@ -133,3 +133,9 @@ nav h2 {
     color:cornflowerblue;
     text-shadow: 0 0 20px cornflowerblue;
 }
+
+
+.product_images img {
+    width:128px;
+    height:128px;
+}

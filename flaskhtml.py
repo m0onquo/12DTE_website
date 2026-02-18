@@ -19,7 +19,26 @@ def home():
 
 @app.route('/shop')
 def shop():
-    return render_template('shop.html', **globalstuff)
+
+    with sqlite3.connect("Databases/products.db") as database:
+        c = database.cursor()
+        c.execute("SELECT * from Products")
+        products = c.fetchall()
+        
+        products_globals = []
+
+        for p in products:
+            products_globals.append({
+                "name": p[0],
+                "price": p[1],
+                "image": p[2]
+            })
+            print(products_globals)
+            #end
+        #end
+    #end
+
+    return render_template('shop.html', **globalstuff, PRODUCTS = products_globals)
 #end
 
 @app.route('/search', methods = ["POST"])

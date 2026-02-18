@@ -36,6 +36,14 @@
     </nav>
     <div name="main">
         <h1> Sigma Digma Shoppage </h1>
+        <div class="product_images">
+            {% for p in PRODUCTS %}
+
+            <p>{{ p.name }} - {{ p.price }}</p>
+            <img src="{{ url_for('static', filename='images/products/' + p.image) }}">
+
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
