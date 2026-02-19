@@ -1,6 +1,7 @@
 body {
     margin: 0; /* Removes the gap between top of the page and navbar */
     height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
@@ -25,7 +26,6 @@ nav h2 {
     color: rgb(31, 31, 31);
     border-radius: 10px;
 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     font-weight: 400;
     overflow: hidden;
@@ -36,12 +36,12 @@ nav h2 {
     margin-right: auto;
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 .navbar_links a{
     color: rgb(31, 31, 31);
     border-radius: 10px;
 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     text-decoration: none;
     font-weight: 400;
@@ -68,7 +68,7 @@ nav h2 {
 
     gap: 10px;
 }
-.cart_button img {
+.cart_button img, .cart_button a {
     display: inline-block;
     width: 28px;
     height: 28px;
@@ -89,7 +89,6 @@ nav h2 {
 /* Searchbar Stuff */
 .search_bar input, button{
     border-radius: 5px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
 }
 .search_bar {
@@ -99,6 +98,11 @@ nav h2 {
 .dropdown_menu {
     position: relative;
     display: inline-block;
+}
+.dropdown_menu a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .shop_dropdown {
     display: none;
@@ -121,7 +125,6 @@ nav h2 {
 }
 
 .shop_dropdown li { /* Style the elements in the dropdown menu */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
 
     list-style: none;
