@@ -12,6 +12,7 @@
         <h2> Crown Jewels </h2>
         <div class = "navbar_links">
             <a href="#">Home</a>
+
             <div class="dropdown_menu">
                 <a href="{{ url_for('shop') }}">Shop <span class="dropdown">⏷</span> </a>
                 <ul class="shop_dropdown">
@@ -28,14 +29,20 @@
                 </form>
             </div>
             <div class="cart_button">
-                <a href="https://www.google.com">
-                    <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </span> <!-- all variables set by flask have to be wrapped inside those brackets I guess --><!-- all caps for class, because for all elements that use class for variables later on ill use all caps -->
-                </a>
+                <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </span> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
             </div>
         </div>
     </nav>
     <div name="main">
-        <h1> Sigma Digma Homepage </h1>
+        <div class="product_images">
+            {% for p in PRODUCTS %}
+                <div class="product_image">
+                    <p>{{ p.name }}</p>
+                    <p>{{ p.price }}</p>
+                    <img src="{{ url_for('static', filename='images/products/' + p.image) }}">
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>

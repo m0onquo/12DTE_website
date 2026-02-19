@@ -34,11 +34,11 @@
         </div>
     </nav>
     <div name="main">
-        <h1> Sigma Digma Shoppage </h1>
         <div class="product_images">
             {% for p in PRODUCTS %}
                 <div class="product_image">
-                    <p>{{ p.name }} - {{ p.price }}</p>
+                    <p>{{ p.name }}</p>
+                    <p>{{ p.price }}</p>
                     <img src="{{ url_for('static', filename='images/products/' + p.image) }}">
                 </div>
             {% endfor %}

@@ -2,6 +2,9 @@ body {
     margin: 0; /* Removes the gap between top of the page and navbar */
     height: 100vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(31,31,31);
+
+    color: snow;
 }
 
 
@@ -9,21 +12,24 @@ body {
 nav {
     display: flex;
     align-items: center;
-    background-color:snow;
+    background-color:rgb(20,20,20);
+    max-height: 5vh;
     min-height: 4vh;
     height: 4vh;
     padding: 0 3rem; /* spacing between the shop name text and the text buttons */
 
-    outline: 10px ridge cornflowerblue;
+        box-shadow:
+        0 0 0 5px beige,
+        0 0 10px 5px cornflowerblue;
 }
 nav img { /* Just the crown logo */
     width: 32px;
     height: 32px;
     padding-right: 15px;
+    filter: invert(100%); /* Switched to dark theme website, so make dark images light */
 }
 nav h2 {
 
-    color: rgb(31, 31, 31);
     border-radius: 10px;
 
     font-style: italic;
@@ -39,13 +45,13 @@ nav h2 {
     align-items: center;
 }
 .navbar_links a{
-    color: rgb(31, 31, 31);
     border-radius: 10px;
 
     font-style: italic;
     text-decoration: none;
     font-weight: 400;
     font-size: 1.2rem;
+    color: snow;
 }
 /* Now I'll add some cool hover effects to the links on the webpage! */
 .navbar_links a:hover {
@@ -70,8 +76,8 @@ nav h2 {
 }
 .cart_button img, .cart_button a {
     display: inline-block;
-    width: 28px;
-    height: 28px;
+    width: 70%;
+    filter: invert(100%); /* Switched to dark theme website, so make dark images light */
 }
 .cart_button h3 {
     display: block;
@@ -88,8 +94,11 @@ nav h2 {
 
 /* Searchbar Stuff */
 .search_bar input, button{
+    height: 100%;
+    font-size: 1em; 
     border-radius: 5px;
     font-style: italic;
+    background-color: rgb(31,31,31);
 }
 .search_bar {
     margin-right: 10px;
@@ -130,6 +139,7 @@ nav h2 {
     list-style: none;
     white-space: nowrap;
     padding: 10px 15px;
+    background-color: rgb(31,31,31);
     
 }
 .shop_dropdown li:hover { /* Cool hover effect too! */
@@ -139,19 +149,30 @@ nav h2 {
 
 .product_images {
     display: grid;
-    grid-template-columns: repeat(3, auto); /* i had to ask chatgpt how to do 3 items per row, only took it 25 damn messages to send the right answer */
+    grid-template-columns: repeat(4, auto); /* i had to ask chatgpt how to do 3 items per row, only took it 25 damn messages to send the right answer */
     gap: 200px;
     justify-content: center;
 }
 
 .product_image {
-    border: 2px solid cornflowerblue;
+    margin-top: 20%;
+    border: 10px solid rgb(20,20,20);
+    background-color: rgb(31,31,31);
+    border-radius: 10px;
+
     padding: 5px;
     text-align: center;
+    width: auto;
+    height: 350px;
+
+    box-shadow:
+        0 0 0 5px beige,
+        0 0 10px 5px cornflowerblue;
 }
 
 .product_image img {
     display: block;
     width: 256px;
     height: 256px;
+
 }
