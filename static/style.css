@@ -137,8 +137,21 @@ nav h2 {
     text-shadow: 0 0 20px cornflowerblue;
 }
 
+.product_images {
+    display: grid;
+    grid-template-columns: repeat(3, auto); /* i had to ask chatgpt how to do 3 items per row, only took it 25 damn messages to send the right answer */
+    gap: 200px;
+    justify-content: center;
+}
 
-.product_images img {
-    width:128px;
-    height:128px;
+.product_image {
+    border: 2px solid cornflowerblue;
+    padding: 5px;
+    text-align: center;
+}
+
+.product_image img {
+    display: block;
+    width: 256px;
+    height: 256px;
 }
