@@ -34,16 +34,7 @@
         </div>
     </nav>
     <div name="main">
-        <h1 class="product_query"> Showing Results For "{{SEARCH_QUERY}}" </h1>
-        <div class="product_images">
-            {% for p in PRODUCTS %}
-                <div class="product_image">
-                    <p>{{ p.name }}</p>
-                    <p>{{ p.price }}</p>
-                    <a href="google.com"> <img src="{{ url_for('static', filename='images/products/' + p.image) }}"> </a>
-                </div>
-            {% endfor %}
-        </div>
+        
     </div>
 </body>
 </html>

@@ -1,6 +1,5 @@
 body {
     margin: 0; /* Removes the gap between top of the page and navbar */
-    height: 100vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: rgb(31,31,31);
 
@@ -15,6 +14,7 @@ nav {
     background-color:rgb(20,20,20);
     max-height: 5vh;
     min-height: 4vh;
+    min-width: 90vw;
     height: 4vh;
     padding: 0 3rem; /* spacing between the shop name text and the text buttons */
 
@@ -99,6 +99,7 @@ nav h2 {
     border-radius: 5px;
     font-style: italic;
     background-color: rgb(31,31,31);
+    color: snow;
 }
 .search_bar {
     margin-right: 10px;
@@ -149,30 +150,42 @@ nav h2 {
 
 .product_images {
     display: grid;
-    grid-template-columns: repeat(4, auto); /* i had to ask chatgpt how to do 3 items per row, only took it 25 damn messages to send the right answer */
-    gap: 200px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
     justify-content: center;
 }
 
 .product_image {
-    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     border: 10px solid rgb(20,20,20);
     background-color: rgb(31,31,31);
     border-radius: 10px;
 
     padding: 5px;
     text-align: center;
-    width: auto;
-    height: 350px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
 
     box-shadow:
         0 0 0 5px beige,
         0 0 10px 5px cornflowerblue;
+    object-fit: cover;  
 }
 
 .product_image img {
     display: block;
-    width: 256px;
-    height: 256px;
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+}
 
+.product_query { /* Just for the search query text on search page */
+    padding-left: 2%;
+    font-size: 1.2rem;
 }

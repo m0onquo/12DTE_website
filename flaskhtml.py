@@ -44,7 +44,26 @@ def shop():
 @app.route('/search', methods = ["POST"])
 def search():
     searched = request.form.get("SEARCH_BOX").strip()
-    return render_template('search.html', **globalstuff, SEARCH_QUERY = searched)
+    search_term = f"%{searched}%" # Not sure why it has to be this way but this lets you search without needing exact match
+
+    with sqlite3.connect("Databases/products.db") as database:
+        c = database.cursor()
+        c.execute("SELECT * FROM Products WHERE keywords LIKE ?", (search_term,))
+        products = c.fetchall()
+        
+        products_globals = []
+
+        for p in products:
+            products_globals.append({
+                "name": p[0],
+                "price": p[1],
+                "image": p[2]
+            })
+            print(products_globals)
+            #end
+        #end
+    #end
+    return render_template('search.html', **globalstuff, SEARCH_QUERY = searched, PRODUCTS = products_globals)
 #end
 
 if __name__ == '__main__':
