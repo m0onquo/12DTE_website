@@ -29,7 +29,6 @@ nav img { /* Just the crown logo */
     filter: invert(100%); /* Switched to dark theme website, so make dark images light */
 }
 nav h2 {
-
     border-radius: 10px;
 
     font-style: italic;
@@ -175,6 +174,12 @@ nav h2 {
         0 0 0 5px beige,
         0 0 10px 5px cornflowerblue;
     object-fit: cover;  
+    font-weight: bold;
+    font-style: italic;
+}
+.product_images a {
+    color: snow;
+    text-decoration: none;
 }
 
 .product_image img {
@@ -188,4 +193,23 @@ nav h2 {
 .product_query { /* Just for the search query text on search page */
     padding-left: 2%;
     font-size: 1.2rem;
+}
+
+
+
+
+.main-content {
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px;
+}
+
+.displayproduct_image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 10px;
+    
+    box-shadow:
+        0 0 0 5px beige,
+        0 0 10px 5px cornflowerblue;
 }

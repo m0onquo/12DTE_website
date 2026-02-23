@@ -31,7 +31,8 @@ def shop():
             products_globals.append({
                 "name": p[0],
                 "price": p[1],
-                "image": p[2]
+                "image": p[2],
+                "id":   p[4]
             })
             print(products_globals)
             #end
@@ -48,7 +49,7 @@ def search():
 
     with sqlite3.connect("Databases/products.db") as database:
         c = database.cursor()
-        c.execute("SELECT * FROM Products WHERE keywords LIKE ?", (search_term,))
+        c.execute("SELECT * FROM Products WHERE keywords LIKE ?", (search_term,)) # No funny SQL stuff
         products = c.fetchall()
         
         products_globals = []
@@ -57,7 +58,8 @@ def search():
             products_globals.append({
                 "name": p[0],
                 "price": p[1],
-                "image": p[2]
+                "image": p[2],
+                "id":   p[4]
             })
             print(products_globals)
             #end
@@ -65,6 +67,19 @@ def search():
     #end
     return render_template('search.html', **globalstuff, SEARCH_QUERY = searched, PRODUCTS = products_globals)
 #end
+
+@app.route('/product/<int:ID>')
+def display_product(ID):
+
+    with sqlite3.connect("Databases/products.db") as database:
+        c = database.cursor()
+        c.execute("SELECT Item, Price, Image FROM Products WHERE ID = ?", (ID,)) # No funny SQL stuff
+        product = c.fetchone()
+    #end
+
+    return render_template('display_product.html', **globalstuff, PRODUCT = product)
+#end
+
 
 if __name__ == '__main__':
     app.run(debug=True)
