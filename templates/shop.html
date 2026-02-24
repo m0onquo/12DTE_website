@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- I hate having to use url_for it just slightly confuses me -->
 </head>
 <body>
-    <nav> 
+    <nav>
+        <div class="home_button">
+            <a href="{{ url_for('home') }}"> <img src="{{ url_for('static', filename='images/home.png') }}" alt="Home Icon"> </a>
+        </div>
         <img src="{{ url_for('static', filename='images/crown_logo.png') }}" alt="Crown Logo">
         <h2> Crown Jewels </h2>
         <div class = "navbar_links">
-            <a href="{{ url_for('home') }}">Home</a>
-
             <div class="dropdown_menu">
-                <a href="#">Shop <span class="dropdown">⏷</span> </a>
+                <a href="#"> Shop <span class="dropdown">⏷</span> </a>
                 <ul class="shop_dropdown">
                     <li>Test-1</li>
                     <li>Test-2</li>
@@ -24,12 +25,12 @@
         <div class="cart">
             <div class="search_bar">
                 <form action="{{ url_for('search') }}" method="post">
-                    <input type="text" name="SEARCH_BOX">
+                    <input type="text" name="SEARCH_BOX" placeholder="Search...">
                     <button type="submit">Search</button>
                 </form>
             </div>
             <div class="cart_button">
-                <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </span> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
+                <a href=""> <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </a> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
             </div>
         </div>
     </nav>
