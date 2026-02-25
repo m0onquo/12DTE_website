@@ -45,6 +45,13 @@ def shop():
 @app.route('/search', methods = ["POST"])
 def search():
     searched = request.form.get("SEARCH_BOX").strip()
+    if not searched.isalpha():
+        cleaned_chars = [char for char in searched if char.isalpha()]
+        cleaned_text = "".join(cleaned_chars)
+            #end
+        #end
+    #end
+
     search_term = f"%{searched}%" # Not sure why it has to be this way but this lets you search without needing exact match
 
     with sqlite3.connect("Databases/products.db") as database:

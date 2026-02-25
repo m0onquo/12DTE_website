@@ -57,7 +57,7 @@ nav h2 {
 /* Home button in top left*/
 .home_button a{
     display: flex;
-    width: 32px;
+    width: 60%;
     height: 32px;
     padding-right: 2rem;
 }
@@ -104,13 +104,19 @@ nav h2 {
 
 /* Searchbar Stuff */
 .search_bar input, button{
-    height: 100%;
-    font-size: 1em; 
+    font-size: 100%; 
     border-radius: 5px;
     font-style: italic;
     background-color: inherit;
     color: rgb(33, 37, 41);
 }
+.search_bar input{
+    border: none;
+    outline:rgb(33, 37, 41) solid 2px;
+    background-color:rgb(33, 37, 41);
+    color: snow;
+}
+
 .search_bar {
     margin-right: 10px;
 }
@@ -150,7 +156,7 @@ nav h2 {
     list-style: none;
     white-space: nowrap;
     padding: 10px 15px;
-    background-color: rgb(31,31,31);
+    background-color: snow;
     
 }
 .shop_dropdown li:hover { /* Cool hover effect too! */
@@ -172,18 +178,16 @@ nav h2 {
     justify-content: space-between;
 
     border: 10px solid rgb(20,20,20);
-    background-color: rgb(31,31,31);
-    border-radius: 10px;
+    background-color: snow;
+    border-radius: 15px;
 
+    color:rgb(33, 37, 41);
     padding: 5px;
     text-align: center;
     width: 100%;
     max-width: 300px;
     height: auto;
 
-    box-shadow:
-        0 0 0 5px beige,
-        0 0 10px 5px cornflowerblue;
     object-fit: cover;  
     font-weight: bold;
     font-style: italic;
