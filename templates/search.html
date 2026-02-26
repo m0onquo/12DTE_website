@@ -8,11 +8,10 @@
 </head>
 <body>
     <nav> 
-        <div class="home_button">
-            <a href="{{ url_for('home') }}"> <img src="{{ url_for('static', filename='images/home.png') }}" alt="Home Icon"> </a>
-        </div>
         <img src="{{ url_for('static', filename='images/crown_logo.png') }}" alt="Crown Logo">
-        <h2> Crown Jewels </h2>
+        <a href="{{ url_for('home') }}">
+            <h2> Crown Jewels </h2>
+        </a>
         <div class = "navbar_links">
             <div class="dropdown_menu">
                 <a href="{{ url_for('shop') }}"> Shop <span class="dropdown">⏷</span> </a>
