@@ -168,7 +168,7 @@ nav a {
 
 .product_images {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* repeat images */
     gap: 20px;
     padding: 5%;
     justify-content: center;
@@ -213,19 +213,20 @@ nav a {
 
 
 
-
-.main-content {
+/* Display Product Page */
+.main_content {
     display: flex;
     justify-content: flex-start;
     padding: 40px;
 }
 
-.displayproduct_image {
-    max-width: 40%;
+.main_content img {
+    width: 35%;
+    max-width: 80%;
     height: auto;
     border-radius: 10px;
     
     box-shadow:
-        0 0 0 5px beige,
+        0 0 0 5px black,
         0 0 10px 5px cornflowerblue;
 }
