@@ -30,7 +30,7 @@
             <div class="search_bar">
                 <form action="{{ url_for('search') }}" method="post">
                     <input type="text" name="SEARCH_BOX" placeholder="Search...">
-                    <button type="submit">Search</button>
+                    <button type="submit"><img src="{{ url_for('static', filename='images/search_icon.png') }}"></button>
                 </form>
             </div>
             <div class="cart_button">

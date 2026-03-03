@@ -40,7 +40,7 @@
                 <div class="product_image">
                     <p>{{ p.name }}</p>
                     <p>{{ p.price }}</p>
-                    <a href="google.com"> <img src="{{ url_for('static', filename='images/products/' + p.image) }}"> </a>
+                    <a href = "/product/{{ p.id }}"> <img src="{{ url_for('static', filename='images/products/' + p.image) }}"> </a>
                 </div>
             {% endfor %}
         </div>
