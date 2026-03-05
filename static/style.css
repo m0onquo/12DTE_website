@@ -117,6 +117,9 @@ nav a {
     background-color:inherit;
     color: rgb(33, 37, 41);
 }
+.search_bar input:focus {
+    outline: none;
+}
 
 .search_bar {
     margin-right: 10px;
@@ -124,15 +127,21 @@ nav a {
 .search_bar button img {
     width: 20px;
     height: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0px;
 }
 .search_bar button {
     background: none;
     border: none;
+    display: flex;
 }
 .search_bar form {
     outline:rgb(33, 37, 41) solid 2px;
     align-items: center;    
     justify-content: center;
+    display: flex;
+    padding: 2px;
 }
 /* Shop Button Dropdown Items */
 .dropdown_menu {
@@ -238,6 +247,8 @@ nav a {
     max-height: 45vh;
     border-radius: 10px;
     outline: black solid 5px;
+    margin-left: 10%;
+    margin-right:20%;
 }
 .displayProduct_info {
     display: flex;
@@ -247,5 +258,5 @@ nav a {
     align-items: flex-start;
 }
 .main_content button {
-    
+    font-size: 2rem;
 }
