@@ -242,13 +242,15 @@ nav a {
 }
 
 .main_content img {
-    width: 20vw;
+    width: 25vw;
     max-width: 80%;
-    max-height: 45vh;
+    max-height: 50vh;
     border-radius: 10px;
     outline: black solid 5px;
     margin-left: 10%;
     margin-right:20%;
+    margin-top: 10%;
+    transform: scale(1.5); /* cbb changing width and height stuff rn */
 }
 .displayProduct_info {
     display: flex;
@@ -256,7 +258,17 @@ nav a {
     margin-left: 10%;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-top: 7%;
 }
 .main_content button {
     font-size: 2rem;
+}
+.main_content img {
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.main_content img:hover {
+    transform: scale(1.7);
+    z-index: 10;
 }

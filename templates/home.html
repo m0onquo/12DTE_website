@@ -16,7 +16,7 @@
             <div class="dropdown_menu">
                 <a href="{{ url_for('shop') }}"> Shop <span class="dropdown">⏷</span> </a>
                 <ul class="shop_dropdown">
-                    {% for p in PRODUCTS %}
+                    {% for p in globalProducts %}
                     <a href = "/product/{{ p.id }}">
                         <li>
                             {{ p.name }}    
