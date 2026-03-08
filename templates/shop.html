@@ -41,13 +41,17 @@
     <div name="main">
         <div class="product_images">
             {% for p in globalProducts %}
+            <div class="product">
                 <a href = "/product/{{ p.id }}">
                     <div class="product_image">
                         <img src="{{ url_for('static', filename='images/products/' + p.image) }}">
+                    </div>
+                    <div class="product_info" > 
                         <p>{{ p.name }}</p>
-                        <p>{{ p.price }}</p>
+                        <p>{{ p.price }}</p> 
                     </div>
                 </a>
+            </div>
             {% endfor %}
         </div>
     </div>
