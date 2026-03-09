@@ -1,7 +1,7 @@
 body {
     margin: 0; /* Removes the gap between top of the page and navbar */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: rgb(248, 249, 250);
+    background-color: white;
 
     color: rgb(33, 37, 41);
 }
@@ -12,12 +12,10 @@ nav {
     display: flex;
     align-items: center;
     background-color:rgb(240, 242, 245);
-    max-height: 6vh;
     min-height: 5vh;
     min-width: 90vw;
-    height: 4vh;
     padding: 0 2rem 0 1rem; /* spacing between the shop name text and the text buttons */
-    outline: rgb(33, 37, 41) solid 5px;
+    outline: rgb(247, 7, 87) ridge 5px;
 }
 nav img { /* Just the crown logo */
     width: 32px;
@@ -27,15 +25,14 @@ nav img { /* Just the crown logo */
 }
 nav a {
     border-radius: 10px;
-
+    font-size: 0.8rem;
     font-style: italic;
     font-weight: 400;
-    overflow: hidden;
+    overflow:hidden;
     margin-right: 3%;
     text-decoration: none;
     color: rgb(33, 37, 41);
 }  
-
 .navbar_links {
     margin-right: auto;
     display: flex;
@@ -53,22 +50,8 @@ nav a {
 }
 /* Now I'll add some cool hover effects to the links on the webpage! */
 .navbar_links a:hover {
-    color:cornflowerblue;
-    text-shadow: 0 0 20px cornflowerblue;
-}
-/* Home button in top left*/
-.home_button a{
-    display: flex;
-    width: 60%;
-    height: 32px;
-    padding-right: 2rem;
-}
-.home_button img {
-    align-items: start;
-    margin: auto;
-    /* filter: invert(100%); */
-    width: 80%;
-    height: 80%;
+    color: rgb(247, 7, 87);
+    text-shadow: 0 0 20px rgb(250, 241, 244);
 }
 
 
@@ -114,7 +97,7 @@ nav a {
 }
 .search_bar input{
     border: none;
-    background-color:inherit;
+    background-color: inherit;
     color: rgb(33, 37, 41);
 }
 .search_bar input:focus {
@@ -142,6 +125,7 @@ nav a {
     justify-content: center;
     display: flex;
     padding: 2px;
+    background-color: rgb(250, 241, 244);
 }
 /* Shop Button Dropdown Items */
 .dropdown_menu {
@@ -183,25 +167,25 @@ nav a {
     
 }
 .shop_dropdown li:hover { /* Cool hover effect too! */
-    color:cornflowerblue;
-    text-shadow: 0 0 20px cornflowerblue;
+    color: rgb(247, 7, 87);
+    text-shadow: 0 0 20px rgb(250, 241, 244);
 }
 
 .product_images {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* repeat images */
-    gap: 20px;
     padding: 5%;
     justify-content: center;
+    gap:5%;
 }
 
 .product {
+    outline: black solid 5px;       
     display: flex;
     flex-direction: column;
 
-    border: 5px solid rgb(20,20,20);
-    background-color: snow;
-    border-radius: 15px;
+    background-color: rgb(250, 241, 244);
+    border-radius: 5px;
 
     color:rgb(33, 37, 41);
     padding: 5px;
@@ -213,6 +197,18 @@ nav a {
     object-fit: cover;  
     font-weight: bold;
     font-style: italic;
+}
+.product button {
+    border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline: black solid 2px;
+    background-color: white;
+    
+    border-radius: 2px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+
+    align-self: center;
 }
 .product a {
     color: black;
@@ -227,7 +223,6 @@ nav a {
     border-radius: 10px;
 }
 .product_image {
-    outline: linen 5px solid;
     margin: 5px;
     border-radius: 5px;
 }
@@ -250,7 +245,6 @@ nav a {
     max-width: 80%;
     max-height: 50vh;
     border-radius: 10px;
-    outline: black solid 5px;
     margin-left: 10%;
     margin-right:20%;
     margin-top: 10%;
@@ -259,13 +253,17 @@ nav a {
 .displayProduct_info {
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
     justify-content: flex-start;
     align-items: flex-start;
     margin-top: 7%;
 }
 .main_content button {
+    border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline: black solid 2px;
+    background-color: white;
     font-size: 2rem;
+    border-radius: 2px;
 }
 .main_content img {
     transition: transform 0.3s ease;
