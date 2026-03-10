@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- I hate having to use url_for it just slightly confuses me -->
 </head>
 <body>
-    <nav> 
+    <nav class="nav_main"> 
         <img src="{{ url_for('static', filename='images/crown_logo.png') }}" alt="Crown Logo">
         <a href="{{ url_for('home') }}">
             <h2> Crown Jewels </h2>
@@ -47,7 +47,6 @@
                 <a>
                     <button> Purchase </button>
                 </a>
-                <h1> </h1> <!-- lazy route for spacing -->
                 <h1> </h1>
                 <h1> Free shipping on orders over $500! </h1>
             </div>

@@ -8,7 +8,7 @@ body {
 
 
 /* Navbar Stuff */
-nav {
+.nav_main {
     display: flex;
     align-items: center;
     background-color:rgb(240, 242, 245);
@@ -17,13 +17,13 @@ nav {
     padding: 0 2rem 0 1rem; /* spacing between the shop name text and the text buttons */
     outline: rgb(247, 7, 87) ridge 5px;
 }
-nav img { /* Just the crown logo */
+.nav_main img { /* Just the crown logo */
     width: 32px;
     height: 32px;
     padding-right: 15px;
     /* filter: invert(100%); */ /* Switched to dark theme website, so make dark images light */
 }
-nav a {
+.nav_main a {
     border-radius: 10px;
     font-size: 0.8rem;
     font-style: italic;
@@ -53,7 +53,21 @@ nav a {
     color: rgb(247, 7, 87);
     text-shadow: 0 0 20px rgb(250, 241, 244);
 }
+.nav_bottom { 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2px 0px 2px 0px;
+    margin-top: 6px;
 
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: aliceblue;
+
+    background-color: rgb(247, 7, 87);
+}
 
 /* Cart Stuff */
 .cart {
@@ -173,7 +187,7 @@ nav a {
 
 .product_images {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* repeat images */
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr)); /* repeat images */
     padding: 5%;
     justify-content: center;
     row-gap: 10%;
@@ -248,15 +262,17 @@ nav a {
     margin-right:20%;
     margin-top: 10%;
     transform: scale(1.5); /* cbb changing width and height stuff rn */
+    outline: black ridge 10px;
 }
 .displayProduct_info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-top: 7%;
+    outline: black ridge 10px;
 }
 .displayProduct_info {
-    background-color: rgb(233, 208, 216);
+    background-color: rgb(255, 228, 237);
     border-radius: 10px;
     padding: 20px; 
 }

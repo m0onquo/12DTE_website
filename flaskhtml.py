@@ -63,10 +63,10 @@ def search():
         c.execute("SELECT * FROM Products WHERE keywords LIKE ?", (search_term,)) # No funny SQL stuff
         products = c.fetchall()
         
-        products = []
+        productsL = []
 
         for p in products:
-            products.append({
+            productsL.append({
                 "name": p[0],
                 "price": p[1],
                 "image": p[2],
@@ -76,7 +76,7 @@ def search():
             #end
         #end
     #end
-    return render_template('search.html', **globalstuff, SEARCH_QUERY = searched, PRODUCTS = products_globals, globalProducts = products_globals)
+    return render_template('search.html', **globalstuff, SEARCH_QUERY = searched, PRODUCTS = productsL, globalProducts = products_globals)
 #end
 
 @app.route('/product/<int:ID>')

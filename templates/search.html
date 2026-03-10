@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- I hate having to use url_for it just slightly confuses me -->
 </head>
 <body>
-    <nav> 
+    <nav class="nav_main"> 
         <img src="{{ url_for('static', filename='images/crown_logo.png') }}" alt="Crown Logo">
         <a href="{{ url_for('home') }}">
             <h2> Crown Jewels </h2>
@@ -41,7 +41,7 @@
     <div name="main">
         <h1 class="product_query"> Showing Results For "{{SEARCH_QUERY}}" </h1>
         <div class="product_images">
-            {% for p in globalProducts %}
+            {% for p in PRODUCTS %}
             <div class="product">
                 <a href = "/product/{{ p.id }}">
                     <div class="product_image">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="product_info" > 
                         <p>{{ p.name }}</p>
-                        <p>{{ p.price }}</p> 
+                        $<p>{{ p.price }}</p> 
                     </div>
                 </a>
                 <a href = "/product/{{ p.id }}"> <button> [ Add To Cart ] </button> </a>
