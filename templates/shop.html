@@ -51,7 +51,7 @@
                         <p>${{ p.price }}</p> 
                     </div>
                 </a>
-                <a href = "/product/{{ p.id }}"> <button> [ Add To Cart ] </button> </a>
+                <a href="{{ url_for('add_cart', item_id=p.id) }}"> <button>[ Add To Cart ]</button> </a>
             </div>
             {% endfor %}
         </div>

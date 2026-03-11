@@ -38,24 +38,34 @@
             </div>
         </div>
     </nav>
+    <nav class="nav_bottom"> some text thingy placeholder </nav>
     <div name="main">
-        <h1 class="product_query"> Showing Results For "{{SEARCH_QUERY}}" </h1>
-        <div class="product_images">
-            {% for p in PRODUCTS %}
-            <div class="product">
-                <a href = "/product/{{ p.id }}">
-                    <div class="product_image">
-                        <img src="{{ url_for('static', filename='images/products/' + p.image) }}">
-                    </div>
-                    <div class="product_info" > 
-                        <p>{{ p.name }}</p>
-                        $<p>{{ p.price }}</p> 
-                    </div>
-                </a>
-                <a href="{{ url_for('add_cart', item_id=p.id) }}"> <button>[ Add To Cart ]</button> </a>
+        <h1>Your Shopping Cart</h1>
+
+        {% if CART_ITEMS %}
+            <div class="cart_container">
+                {% for item in CART_ITEMS %}
+                <div class="cart_item">
+                    <img src="{{ url_for('static', filename='images/products/' + item.image) }}" width="50">
+                    <span>{{ item.name }}</span>
+                    
+                    <span>
+                        <a href="{{ url_for('remove_from_cart', item_id=item.id) }}"><button>-</button></a>
+                        Quantity: {{ item.quantity }}
+                        <a href="{{ url_for('add_cart', item_id=item.id) }}"><button>+</button></a>
+                    </span>
+                    
+                    <span>Subtotal: ${{ item.subtotal }}</span>
+                </div>
+                {% endfor %}
+                
+                <hr>
+                <h3>Total: ${{ TOTAL }}</h3>
+                <button>Checkout</button>
             </div>
-            {% endfor %}
-        </div>
+        {% else %}
+            <p>Your cart is empty. Go buy some jewels!</p>
+        {% endif %}
     </div>
 </body>
 </html>

@@ -1,15 +1,16 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, url_for
 import sqlite3
 import os
+import uuid
 
+myID = uuid.uuid4()
 app = Flask(__name__)
+app.secret_key = "very_cool_password"
 
 username = os.getlogin()
 globalstuff = {
     "NAME": __name__,
     "USERNAME": username,
-
-    "ITEM_COUNT": "12" #placeholder
 }
 
 products_globals = []
@@ -26,7 +27,6 @@ with sqlite3.connect("Databases/products.db") as database:
                 "keywords": p[3],
                 "id":   p[4]
             })
-
             #end
         #end
     #end
@@ -89,6 +89,67 @@ def display_product(ID):
     #end
 
     return render_template('display_product.html', **globalstuff, PRODUCT = product, globalProducts = products_globals)
+#end
+
+@app.route('/cart_add/<int:item_id>')
+def add_cart(item_id):
+    cart = session.get('cart', {})
+
+    str_id = str(item_id) 
+    cart[str_id] = cart.get(str_id, 0) + 1
+    session['cart'] = cart
+    session.modified = True
+    return redirect(url_for('view_cart'))
+#end
+@app.route('/cart_remove/<int:item_id>')
+def remove_from_cart(item_id):
+    cart = session.get('cart', {})
+    str_id = str(item_id)
+
+    if str_id in cart:
+        if cart[str_id] > 1:
+            cart[str_id] -= 1
+        else:
+            cart.pop(str_id)
+        #end
+    #end
+            
+    session['cart'] = cart
+    session.modified = True
+    return redirect(url_for('view_cart'))
+#end
+
+@app.route('/cart')
+def view_cart():
+    cart = session.get('cart', {})
+    display_cart = []
+    total_price = 0
+
+    with sqlite3.connect("Databases/products.db") as database:
+        c = database.cursor()
+        for item_id, quantity in cart.items():
+            # SAFETY CHECK: skip if item_id isn't a number
+            if not str(item_id).isdigit():
+                continue 
+            
+            c.execute("SELECT Item, Price, Image FROM Products WHERE ID = ?", (int(item_id),))
+            product = c.fetchone()
+            
+            if product:
+                name, price, image = product[0], product[1], product[2]
+                subtotal = price * quantity
+                total_price += subtotal
+                
+                display_cart.append({
+                    "id": item_id,
+                    "name": name,
+                    "price": price,
+                    "image": image,
+                    "quantity": quantity,
+                    "subtotal": subtotal
+                })
+
+    return render_template('cart.html', **globalstuff, CART_ITEMS=display_cart, TOTAL=total_price)
 #end
 
 
