@@ -39,6 +39,14 @@
         </div>
     </nav>
     <div name="main">
+        <div class="product_sorting">
+            <h3> Sort By: </h3>
+            <div class="filter_options">
+                <a href="{{ url_for('shop', SORT='name') }}"> Name </a>
+                <a href="{{ url_for('shop', SORT='price') }}"> Price </a>
+                <a href="{{ url_for('shop', SORT='id') }}"> ID </a>
+            </div>
+        </div>
         <div class="product_images">
             {% for p in globalProducts %}
             <div class="product">

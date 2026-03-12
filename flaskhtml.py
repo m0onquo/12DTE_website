@@ -33,6 +33,8 @@ with sqlite3.connect("Databases/products.db") as database:
 #end
 
 def sortproducts(by, itemlist):
+    if by == "NONE": return itemlist #end
+    
     sortedstuff = sorted(itemlist, key=lambda product: product[by])
     return sortedstuff
 #end
@@ -42,9 +44,12 @@ def home():
     return render_template('home.html', **globalstuff, globalProducts = products_globals)
 #end
 
-@app.route('/shop')
-def shop():
-    p = sortproducts("price", products_globals)
+@app.route('/shop/<string:SORT>')
+def shop(SORT):
+    sort_key = SORT.lower() if SORT.lower() in ["name", "price", "id"] else "id"
+    
+    p = sortproducts(sort_key, products_globals)
+    
     return render_template('shop.html', **globalstuff, globalProducts = p)
 #end
 

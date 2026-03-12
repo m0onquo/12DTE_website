@@ -14,7 +14,7 @@
         </a>
         <div class = "navbar_links">
             <div class="dropdown_menu">
-                <a href="{{ url_for('shop') }}"> Shop <span class="dropdown">⏷</span> </a>
+                <a href="{{ url_for('shop', SORT='id' )}}"> Shop <span class="dropdown">⏷</span> </a>
                 <ul class="shop_dropdown">
                     {% for p in globalProducts %}
                     <a href = "/product/{{ p.id }}">
