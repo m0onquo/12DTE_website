@@ -32,8 +32,9 @@ with sqlite3.connect("Databases/products.db") as database:
     #end
 #end
 
-def sortproducts(by):
-    return 1
+def sortproducts(by, itemlist):
+    sortedstuff = sorted(itemlist, key=lambda product: product[by])
+    return sortedstuff
 #end
 
 @app.route('/') # Flask lwk confusing i cant link css or html how it's normally done
@@ -43,7 +44,8 @@ def home():
 
 @app.route('/shop')
 def shop():
-    return render_template('shop.html', **globalstuff, globalProducts = products_globals)
+    p = sortproducts("price", products_globals)
+    return render_template('shop.html', **globalstuff, globalProducts = p)
 #end
 
 @app.route('/search', methods = ["POST"])
