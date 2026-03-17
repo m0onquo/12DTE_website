@@ -44,8 +44,9 @@ def home():
     return render_template('home.html', **globalstuff, globalProducts = products_globals)
 #end
 
+@app.route('/shop/')
 @app.route('/shop/<string:SORT>')
-def shop(SORT):
+def shop(SORT="NONE"):
     sort_key = SORT.lower() if SORT.lower() in ["name", "price", "id"] else "id"
     
     p = sortproducts(sort_key, products_globals)
@@ -88,14 +89,12 @@ def search():
 
 @app.route('/product/<int:ID>')
 def display_product(ID):
-
     with sqlite3.connect("Databases/products.db") as database:
         c = database.cursor()
-        c.execute("SELECT Item, Price, Image FROM Products WHERE ID = ?", (ID,)) # No funny SQL stuff
+        c.execute("SELECT name, price, image, id FROM Products WHERE ID = ?", (ID,))
         product = c.fetchone()
     #end
-
-    return render_template('display_product.html', **globalstuff, PRODUCT = product, globalProducts = products_globals)
+    return render_template('display_product.html', **globalstuff, PRODUCT=product, globalProducts=products_globals)
 #end
 
 @app.route('/cart_add/<int:item_id>')
@@ -144,6 +143,7 @@ def view_cart():
             
             if product:
                 name, price, image = product[0], product[1], product[2]
+                
                 subtotal = price * quantity
                 total_price += subtotal
                 
@@ -153,10 +153,10 @@ def view_cart():
                     "price": price,
                     "image": image,
                     "quantity": quantity,
-                    "subtotal": subtotal
+                    "subtotal": f"{subtotal:.2f}"
                 })
 
-    return render_template('cart.html', **globalstuff, CART_ITEMS=display_cart, TOTAL=total_price)
+    return render_template('cart.html', **globalstuff, CART_ITEMS=display_cart, TOTAL=f"{total_price:.2f}") # Rounding the annoying decimals
 #end
 
 

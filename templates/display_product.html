@@ -40,12 +40,13 @@
     </nav>
     <div name="main">
         <div class="main_content">
-            <img src="{{ url_for('static', filename='images/products/' + PRODUCT[2]) }}" alt="{{ PRODUCT[0] }}" >
+            <img src="{{ url_for('static', filename='images/products/' + PRODUCT.image) }}" alt="{{ PRODUCT[0] }}" >
             <div class="displayProduct_info">
-                <h1>{{ PRODUCT[0] }}</h1>
-                <h2>${{ PRODUCT[1] }}</h2>
-                <a>
-                    <button> Purchase </button>
+                <h1>{{ PRODUCT.name }}</h1>
+                <h2>${{ PRODUCT.price }}</h2>
+
+                <a href="{{ url_for('add_cart', item_id=PRODUCT.id) }}">
+                    <button class="buy_button"> Purchase </button>
                 </a>
                 <h1> </h1>
                 <h1> Free shipping on orders over $500! </h1>

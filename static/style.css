@@ -188,7 +188,7 @@ body {
 .product_images {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(325px, 1fr)); /* repeat images */
-    padding: 5%;
+    padding: 1% 0 0 3%;
     justify-content: center;
     row-gap: 10%;
 }
@@ -247,53 +247,80 @@ body {
 
 
 
-/* Display Product Page */
+/* Product Display - Grid Layout to fill space */
 .main_content {
-    display: flex;
-    padding: 40px;
+    display: grid;
+    /* This makes two columns: one for image (40%), one for info (60%) */
+    grid-template-columns: 4fr 6fr; 
+    gap: 0; /* Removing gap to let the outlines touch or stay close */
+    padding: 20px;
+    margin: 40px 5%;
+    outline: black solid 5px; /* Big outer border for the whole section */
+    background-color: snow;
 }
 
+/* Left Side: Image */
 .main_content img {
-    width: 25vw;
-    max-width: 80%;
-    max-height: 50vh;
-    border-radius: 10px;
-    margin-left: 10%;
-    margin-right:20%;
-    margin-top: 10%;
-    transform: scale(1.5); /* cbb changing width and height stuff rn */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fills the box instead of floating in it */
     outline: black ridge 10px;
+    display: block;
 }
-.displayProduct_info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 7%;
-    outline: black ridge 10px;
-}
+
+/* Right Side: Info Box */
 .displayProduct_info {
     background-color: rgb(255, 228, 237);
-    border-radius: 10px;
-    padding: 20px; 
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically to fill height */
+    outline: black ridge 10px;
 }
-.main_content button {
-    border: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    outline: black solid 2px;
+
+.displayProduct_info h1 {
+    font-size: 3.5rem; /* Bigger title */
+    margin-bottom: 5px;
+}
+
+.displayProduct_info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Extra section to kill the blank space */
+.product_description {
+    margin-top: 20px;
+    padding: 15px;
     background-color: white;
+    outline: black solid 2px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.buy_button {
+    width: 100%;
+    padding: 20px;
+    margin-top: auto; /* Pushes button to the bottom of the pink box */
+    background-color: white;
+    outline: black solid 4px;
+    border: none;
     font-size: 2rem;
-    border-radius: 2px;
-}
-.main_content img {
-    transition: transform 0.3s ease;
-    cursor: zoom-in;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.main_content img:hover {
-    transform: scale(1.7);
-    z-index: 10;
+.buy_button:hover {
+    background-color: rgb(247, 7, 87);
+    color: white;
 }
 
+
+.filter_options {
+    display: flex;
+    gap: 20px;
+}
 .product_sorting {
     margin: 20px 5%;
     display: flex;
@@ -315,3 +342,70 @@ body {
     opacity: 0.8;
     background-color: rgb(200, 5, 70);
 }
+
+/* Cart Page */
+.cart_container {
+    background-color: rgb(250, 241, 244); 
+    outline: black solid 5px; /* Matches your .product style */
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 5%; /* Matches your .product_sorting margin */
+}
+
+/* Individual Rows */
+.cart_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    outline: black solid 2px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.cart_item img {
+    outline: black solid 2px;
+    /* Keeping your 50px width from the HTML but adding scaling */
+    object-fit: contain; 
+}
+
+/* Item Name & Quantity Text */
+.cart_item span {
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(33, 37, 41);
+}
+
+/* The +/- Buttons */
+.cart_item button {
+    border: none;
+    font-family: inherit;
+    outline: black solid 2px;
+    background-color: white;
+    border-radius: 2px;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.cart_item button:hover {
+    background-color: rgb(247, 7, 87);
+    color: white;
+}
+
+/* The Checkout Button at the bottom */
+.cart_container > button {
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgb(247, 7, 87);
+    color: white;
+    font-size: 1.5rem;
+    font-style: italic;
+    outline: black solid 3px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cart_container > button:hover {
+    background-color: rgb(33, 37, 41);
+} 
