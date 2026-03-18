@@ -91,7 +91,7 @@ def search():
 def display_product(ID):
     with sqlite3.connect("Databases/products.db") as database:
         c = database.cursor()
-        c.execute("SELECT name, price, image, id FROM Products WHERE ID = ?", (ID,))
+        c.execute("SELECT * FROM Products WHERE ID = ?", (ID,))
         product = c.fetchone()
     #end
     return render_template('display_product.html', **globalstuff, PRODUCT=product, globalProducts=products_globals)
@@ -105,7 +105,7 @@ def add_cart(item_id):
     cart[str_id] = cart.get(str_id, 0) + 1
     session['cart'] = cart
     session.modified = True
-    return redirect(url_for('view_cart'))
+    return redirect(url_for('view_cart', globalProducts=products_globals))
 #end
 @app.route('/cart_remove/<int:item_id>')
 def remove_from_cart(item_id):
@@ -122,7 +122,7 @@ def remove_from_cart(item_id):
             
     session['cart'] = cart
     session.modified = True
-    return redirect(url_for('view_cart'))
+    return redirect(url_for('view_cart', globalProducts=products_globals))
 #end
 
 @app.route('/cart')
@@ -156,7 +156,7 @@ def view_cart():
                     "subtotal": f"{subtotal:.2f}"
                 })
 
-    return render_template('cart.html', **globalstuff, CART_ITEMS=display_cart, TOTAL=f"{total_price:.2f}") # Rounding the annoying decimals
+    return render_template('cart.html', **globalstuff, CART_ITEMS=display_cart, TOTAL=f"{total_price:.2f}", globalProducts=products_globals) # Rounding the annoying decimals
 #end
 
 

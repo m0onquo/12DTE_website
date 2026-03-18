@@ -34,13 +34,13 @@
                 </form>
             </div>
             <div class="cart_button">
-                <a href=""> <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </a> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
+                <a href="{{url_for('view_cart')}}"> <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </a> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
             </div>
         </div>
     </nav>
     <nav class="nav_bottom"> some text thingy placeholder </nav>
     <div name="main">
-        <h1>Your Shopping Cart</h1>
+        <h1 class="cart_text">Your Shopping Cart</h1>
 
         {% if CART_ITEMS %}
             <div class="cart_container">
@@ -64,7 +64,7 @@
                 <button>Checkout</button>
             </div>
         {% else %}
-            <p>Your cart is empty. Go buy some jewels!</p>
+            <p class="cart_text">Your cart is empty. Go buy some jewels!</p>
         {% endif %}
     </div>
 </body>

@@ -34,7 +34,7 @@
                 </form>
             </div>
             <div class="cart_button">
-                <a href=""> <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </a> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
+                <a href="{{url_for('view_cart')}}"> <img src="{{ url_for('static', filename='images/card.png') }}" alt="Shopping Cart Icon"> </a> <!-- all variables set by flask have to be wrapped inside those brackets I guess -->
             </div>
         </div>
     </nav>

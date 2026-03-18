@@ -194,24 +194,29 @@ body {
 }
 
 .product {
-    outline: black solid 5px;       
     display: flex;
     flex-direction: column;
-
-    background-color: rgb(250, 241, 244);
-    border-radius: 5px;
-
-    color:rgb(33, 37, 41);
-    padding: 5px;
+    background-color: white; /*  white looks better for jewelry stuff*/
+    border-radius: 12px;
+    padding: 15px;
     text-align: center;
     width: 100%;
     max-width: 300px;
-    height: auto;
-
-    object-fit: cover;  
-    font-weight: bold;
-    font-style: italic;
+    min-height:300px;
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    
+    /* super kewl transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(247, 7, 87, 0.1); /* more super cool hover effects */
+}
+
 .product button {
     border: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -247,39 +252,42 @@ body {
 
 
 
-/* Product Display - Grid Layout to fill space */
 .main_content {
     display: grid;
-    /* This makes two columns: one for image (40%), one for info (60%) */
     grid-template-columns: 4fr 6fr; 
-    gap: 0; /* Removing gap to let the outlines touch or stay close */
+    gap: 0;
     padding: 20px;
     margin: 40px 5%;
-    outline: black solid 5px; /* Big outer border for the whole section */
+    outline: black solid 5px;
     background-color: snow;
 }
+.cart_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* Left Side: Image */
+
+
 .main_content img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Fills the box instead of floating in it */
+    object-fit: cover;
     outline: black ridge 10px;
     display: block;
 }
 
-/* Right Side: Info Box */
 .displayProduct_info {
     background-color: rgb(255, 228, 237);
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers text vertically to fill height */
+    justify-content: center;
     outline: black ridge 10px;
 }
 
 .displayProduct_info h1 {
-    font-size: 3.5rem; /* Bigger title */
+    font-size: 3.5rem;
     margin-bottom: 5px;
 }
 
@@ -288,7 +296,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Extra section to kill the blank space */
 .product_description {
     margin-top: 20px;
     padding: 15px;
@@ -301,7 +308,7 @@ body {
 .buy_button {
     width: 100%;
     padding: 20px;
-    margin-top: auto; /* Pushes button to the bottom of the pink box */
+    margin-top: auto;
     background-color: white;
     outline: black solid 4px;
     border: none;
