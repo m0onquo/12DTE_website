@@ -44,7 +44,7 @@ def home():
     return render_template('home.html', **globalstuff, globalProducts = products_globals)
 #end
 
-@app.route('/shop/')
+@app.route('/shop/') # cool you can do multiple so now you can add a default value and not have to specify no filter each time you go to shop page
 @app.route('/shop/<string:SORT>')
 def shop(SORT="NONE"):
     sort_key = SORT.lower() if SORT.lower() in ["name", "price", "id"] else "id"

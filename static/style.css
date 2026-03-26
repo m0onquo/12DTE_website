@@ -193,24 +193,31 @@ body {
     row-gap: 10%;
 }
 
+
 .product {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.05);  
     display: flex;
     flex-direction: column;
-    background-color: white; /*  white looks better for jewelry stuff*/
-    border-radius: 12px;
-    padding: 15px;
+
+    background-color: white;
+    border-radius: 15px;
+
+    color:rgb(33, 37, 41);
+    padding: 5px;
     text-align: center;
     width: 100%;
     max-width: 300px;
-    min-height:300px;
-    
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    
-    /* super kewl transition */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+
+    height: auto;
+
+    object-fit: cover;  
+    font-weight: bold;
+    font-style: italic;
+        /* pro transition to make the color for hover fade into it instead of instant change */
+    transition: 0.2s ease;
 }
+
 
 .product:hover {
     transform: translateY(-8px);
@@ -220,10 +227,10 @@ body {
 .product button {
     border: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    outline: black solid 2px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     background-color: white;
     
-    border-radius: 2px;
+    border-radius: 5px;
     margin-bottom: 20px;
     font-size: 1.5rem;
 
@@ -254,12 +261,17 @@ body {
 
 .main_content {
     display: grid;
-    grid-template-columns: 4fr 6fr; 
+    grid-template-columns: 4fr 6fr;
     gap: 0;
-    padding: 20px;
     margin: 40px 5%;
-    outline: black solid 5px;
     background-color: snow;
+
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    margin-top: 5%;
+    
 }
 .cart_text{
     display: flex;
@@ -267,23 +279,25 @@ body {
     align-items: center;
 }
 
-
-
 .main_content img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    outline: black ridge 10px;
+    min-height: 450px;
+    object-fit: contain;
     display: block;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .displayProduct_info {
-    background-color: rgb(255, 228, 237);
+    background-color: rgb(250, 241, 244);
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    outline: black ridge 10px;
+    outline: none;
+    border-left: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .displayProduct_info h1 {
@@ -315,7 +329,12 @@ body {
     font-size: 2rem;
     font-style: italic;
     font-weight: bold;
-    cursor: pointer;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+
+    /* pro transition to make the color for hover fade into it instead of instant change */
+    transition: 0.2s ease;
 }
 
 .buy_button:hover {
@@ -350,40 +369,49 @@ body {
     background-color: rgb(200, 5, 70);
 }
 
-/* Cart Page */
+
 .cart_container {
-    background-color: rgb(250, 241, 244); 
-    outline: black solid 5px; /* Matches your .product style */
-    border-radius: 5px;
+    background-color: rgb(250, 241, 244);
+    border-radius: 15px;
     padding: 20px;
-    margin: 20px 5%; /* Matches your .product_sorting margin */
+    margin: 20px 5%;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Individual Rows */
 .cart_item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 80px 1.5fr 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
     background-color: white;
-    outline: black solid 2px;
-    margin-bottom: 10px;
-    padding: 10px;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .cart_item img {
-    outline: black solid 2px;
-    /* Keeping your 50px width from the HTML but adding scaling */
-    object-fit: contain; 
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Item Name & Quantity Text */
+
 .cart_item span {
     font-style: italic;
     font-weight: bold;
     color: rgb(33, 37, 41);
 }
 
-/* The +/- Buttons */
+
 .cart_item button {
     border: none;
     font-family: inherit;
@@ -395,16 +423,16 @@ body {
 }
 
 .cart_item button:hover {
-    background-color: rgb(247, 7, 87);
+    background-color: rgb(149, 202, 255);
     color: white;
 }
 
-/* The Checkout Button at the bottom */
+
 .cart_container > button {
     width: 100%;
     margin-top: 20px;
-    background-color: rgb(247, 7, 87);
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 1.5rem;
     font-style: italic;
     outline: black solid 3px;
@@ -413,6 +441,6 @@ body {
     cursor: pointer;
 }
 
-.cart_container > button:hover {
-    background-color: rgb(33, 37, 41);
+.cart_container > button:hover { /* i learnt that if you use ">" it will only now apply this css to buttons that are children of the parent div, not all buttons within it (descendants) */
+    background-color: rgb(149, 202, 255);
 } 
