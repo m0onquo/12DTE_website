@@ -39,33 +39,44 @@
         </div>
     </nav>
     <nav class="nav_bottom"> some text thingy placeholder </nav>
-    <div name="main">
-        <h1 class="cart_text">Your Shopping Cart</h1>
-
-        {% if CART_ITEMS %}
-            <div class="cart_container">
-                {% for item in CART_ITEMS %}
-                <div class="cart_item">
-                    <img src="{{ url_for('static', filename='images/products/' + item.image) }}" width="50">
-                    <span>{{ item.name }}</span>
-                    
-                    <span>
-                        <a href="{{ url_for('remove_from_cart', item_id=item.id) }}"><button>-</button></a>
-                        Quantity: {{ item.quantity }}
-                        <a href="{{ url_for('add_cart', item_id=item.id) }}"><button>+</button></a>
-                    </span>
-                    
-                    <span>Subtotal: ${{ item.subtotal }}</span>
-                </div>
-                {% endfor %}
-                
-                <hr>
-                <h3>Total: ${{ TOTAL }}</h3>
-                <button> <a href="{{ url_for('purchase') }}"> Checkout </a></button>
-            </div>
-        {% else %}
-            <p class="cart_text">Your cart is empty. Go buy some jewels!</p>
-        {% endif %}
+    <div name="main" class="checkout-wrapper">
+        <div class="checkout-form-container">
+            <h1>Secure Checkout</h1>
+            
+            <form action="{{ url_for('purchase') }}" method="POST" class="royal-form">
+                <section class="form-section">
+                    <h3><span class="step-num">1</span> Shipping Address</h3>
+                    <div class="input-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Street Address" required>
+                    </div>
+                    <div class="input-row">
+                        <input type="text" placeholder="City" required>
+                        <input type="text" placeholder="Postcode" required style="width: 100px;">
+                    </div>
+                </section>
+    
+                <section class="form-section">
+                    <h3><span class="step-num">2</span> Payment Details</h3>
+                    <div class="input-group">
+                        <input type="text" placeholder="Cardholder Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Card Number (0000 0000 0000 0000)" maxlength="19" required>
+                    </div>
+                    <div class="input-row">
+                        <input type="text" placeholder="MM/YY" maxlength="5" required>
+                        <input type="password" placeholder="CVV" maxlength="3" required style="width: 80px;">
+                    </div>
+                </section>
+    
+                <button type="submit" class="pay-now-btn">
+                    Authorize Transaction
+                </button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

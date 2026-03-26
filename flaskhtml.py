@@ -101,8 +101,8 @@ def display_product(ID):
 def add_cart(item_id):
     cart = session.get('cart', {})
 
-    str_id = str(item_id) 
-    cart[str_id] = cart.get(str_id, 0) + 1
+    string_id = str(item_id) 
+    cart[string_id] = cart.get(string_id, 0) + 1
     session['cart'] = cart
     session.modified = True
     return redirect(url_for('view_cart', globalProducts=products_globals))
@@ -110,13 +110,13 @@ def add_cart(item_id):
 @app.route('/cart_remove/<int:item_id>')
 def remove_from_cart(item_id):
     cart = session.get('cart', {})
-    str_id = str(item_id)
+    string_id = str(item_id)
 
-    if str_id in cart:
-        if cart[str_id] > 1:
-            cart[str_id] -= 1
+    if string_id in cart:
+        if cart[string_id] > 1:
+            cart[string_id] -= 1
         else:
-            cart.pop(str_id)
+            cart.pop(string_id)
         #end
     #end
             
@@ -159,6 +159,10 @@ def view_cart():
     return render_template('cart.html', **globalstuff, CART_ITEMS=display_cart, TOTAL=f"{total_price:.2f}", globalProducts=products_globals) # Rounding the annoying decimals
 #end
 
+@app.route("/purchase")
+def purchase():
+    return render_template("purchase.html", **globalstuff, globalProducts=products_globals)
+#end
 
 if __name__ == '__main__':
     app.run(debug=True)

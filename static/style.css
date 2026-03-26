@@ -1,9 +1,8 @@
 body {
     margin: 0; /* Removes the gap between top of the page and navbar */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: white;
-
-    color: rgb(33, 37, 41);
+    background-color: #121212;
+    color: #fcfcfc;
 }
 
 
@@ -11,11 +10,11 @@ body {
 .nav_main {
     display: flex;
     align-items: center;
-    background-color:rgb(240, 242, 245);
+    background-color: #ffffff;
     min-height: 5vh;
     min-width: 90vw;
     padding: 0 2rem 0 1rem; /* spacing between the shop name text and the text buttons */
-    outline: rgb(247, 7, 87) ridge 5px;
+    border-bottom: 1px solid #d4af37;
 }
 .nav_main img { /* Just the crown logo */
     width: 32px;
@@ -50,8 +49,7 @@ body {
 }
 /* Now I'll add some cool hover effects to the links on the webpage! */
 .navbar_links a:hover {
-    color: rgb(247, 7, 87);
-    text-shadow: 0 0 20px rgb(250, 241, 244);
+    color: #d4af37;
 }
 .nav_bottom { 
     display: flex;
@@ -64,9 +62,9 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-style: italic;
-    color: aliceblue;
+    color: #d4af37;
 
-    background-color: rgb(247, 7, 87);
+    background-color: #1a1a1a;
 }
 
 /* Cart Stuff */
@@ -97,8 +95,6 @@ body {
     font-style: italic;
     text-decoration: none;
     font-weight: 400;
-
-    color: rgb(33, 37, 41);
 }
 
 /* Searchbar Stuff */
@@ -139,7 +135,7 @@ body {
     justify-content: center;
     display: flex;
     padding: 2px;
-    background-color: rgb(250, 241, 244);
+    background-color: #fcfcfc;
 }
 /* Shop Button Dropdown Items */
 .dropdown_menu {
@@ -157,7 +153,7 @@ body {
     
     outline: 2px ridge black;
     border-radius: 5px;
-    background-color: snow;
+    background-color: #fcfcfc;
 
     padding: 0;
 
@@ -177,11 +173,11 @@ body {
     list-style: none;
     white-space: nowrap;
     padding: 10px 15px;
-    background-color: snow;
+    background-color: #fcfcfc;
     
 }
 .shop_dropdown li:hover { /* Cool hover effect too! */
-    color: rgb(247, 7, 87);
+    color: #1a1a1a;
     text-shadow: 0 0 20px rgb(250, 241, 244);
 }
 
@@ -264,7 +260,7 @@ body {
     grid-template-columns: 4fr 6fr;
     gap: 0;
     margin: 40px 5%;
-    background-color: snow;
+    background-color: #fcfcfc;
 
     border-radius: 15px;
     overflow: hidden;
@@ -277,6 +273,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fcfcfc;
 }
 
 .main_content img {
@@ -285,13 +282,13 @@ body {
     min-height: 450px;
     object-fit: contain;
     display: block;
-    background-color: white;
+    background-color: #1c1c1c;
     padding: 20px;
     box-sizing: border-box;
 }
 
 .displayProduct_info {
-    background-color: rgb(250, 241, 244);
+    background-color: #1e1e1e;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -338,7 +335,7 @@ body {
 }
 
 .buy_button:hover {
-    background-color: rgb(247, 7, 87);
+    background-color: #1a1a1a;
     color: white;
 }
 
@@ -357,7 +354,7 @@ body {
 .product_sorting a {
     text-decoration: none;
     color: white;
-    background-color: rgb(247, 7, 87);
+    background-color: #1a1a1a;
     padding: 8px 16px;
     border-radius: 5px;
     font-size: 14px;
@@ -366,12 +363,12 @@ body {
 
 .product_sorting a:hover {
     opacity: 0.8;
-    background-color: rgb(200, 5, 70);
+    background-color: #1a1a1a;
 }
 
 
 .cart_container {
-    background-color: rgb(250, 241, 244);
+    background-color: #fcfcfc;
     border-radius: 15px;
     padding: 20px;
     margin: 20px 5%;
@@ -431,7 +428,7 @@ body {
 .cart_container > button {
     width: 100%;
     margin-top: 20px;
-    background-color: white;
+    background-color: #1a1a1a;
     color: black;
     font-size: 1.5rem;
     font-style: italic;
@@ -440,7 +437,91 @@ body {
     padding: 10px;
     cursor: pointer;
 }
+.cart_container > button a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fcfcfc;
+}
+/* i learnt that if you use ">" it will only now apply this css to buttons that are children of the parent div, not all buttons within it (descendants) */
 
-.cart_container > button:hover { /* i learnt that if you use ">" it will only now apply this css to buttons that are children of the parent div, not all buttons within it (descendants) */
-    background-color: rgb(149, 202, 255);
-} 
+
+
+
+
+
+
+
+
+
+.checkout-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #fcfcfc;
+}
+
+.checkout-form-container {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    font-size: 1.2rem;
+    border-bottom: 2px solid #d4af37; /* Gold underline */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.step-num {
+    color: #d4af37;
+    margin-right: 10px;
+}
+
+.input-group, .input-row {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+}
+
+input:focus {
+    border-color: #d4af37;
+}
+
+.pay-now-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: #1a1a1a;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pay-now-btn:hover {
+    background-color: #d4af37;
+    color: white;
+}
