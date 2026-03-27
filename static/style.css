@@ -10,17 +10,17 @@ body {
 .nav_main {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #2e2e2e;
     min-height: 5vh;
     min-width: 90vw;
     padding: 0 2rem 0 1rem; /* spacing between the shop name text and the text buttons */
-    border-bottom: 1px solid #d4af37;
+    border-bottom: 1px solid #5B000B;
 }
 .nav_main img { /* Just the crown logo */
     width: 32px;
     height: 32px;
     padding-right: 15px;
-    /* filter: invert(100%); */ /* Switched to dark theme website, so make dark images light */
+    filter: invert(100%); /* Switched to dark theme website, so make dark images light */
 }
 .nav_main a {
     border-radius: 10px;
@@ -30,7 +30,7 @@ body {
     overflow:hidden;
     margin-right: 3%;
     text-decoration: none;
-    color: rgb(33, 37, 41);
+    color: #fcfcfc;
 }  
 .navbar_links {
     margin-right: auto;
@@ -45,11 +45,11 @@ body {
     text-decoration: none;
     font-weight: 400;
     font-size: 1.2rem;
-    color: rgb(33, 37, 41);
+    color: #fcfcfc;
 }
 /* Now I'll add some cool hover effects to the links on the webpage! */
 .navbar_links a:hover {
-    color: #d4af37;
+    color: #9B000B;
 }
 .nav_bottom { 
     display: flex;
@@ -62,7 +62,7 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-style: italic;
-    color: #d4af37;
+    color: #C0100B; /* the color #10B00B kinda reminds me of candy, strangely */
 
     background-color: #1a1a1a;
 }
@@ -84,7 +84,7 @@ body {
 .cart_button img, .cart_button a img {
     display: inline-block;
     width: 70%;
-    /* filter: invert(100%); */ /* Switched to dark theme website, so make dark images light */
+    filter: invert(100%); /* Switched to dark theme website, so make dark images light (nvm switched back again) */
 }
 .cart_button h3 {
     display: block;
@@ -108,7 +108,7 @@ body {
 .search_bar input{
     border: none;
     background-color: inherit;
-    color: rgb(33, 37, 41);
+    color: #fcfcfc;
 }
 .search_bar input:focus {
     outline: none;
@@ -130,12 +130,12 @@ body {
     display: flex;
 }
 .search_bar form {
-    outline:rgb(33, 37, 41) solid 2px;
+    outline: #5B000B solid 2px;
     align-items: center;    
     justify-content: center;
     display: flex;
     padding: 2px;
-    background-color: #fcfcfc;
+    background-color: #2a2a2a;
 }
 /* Shop Button Dropdown Items */
 .dropdown_menu {
@@ -153,7 +153,7 @@ body {
     
     outline: 2px ridge black;
     border-radius: 5px;
-    background-color: #fcfcfc;
+    background-color: #1a1a1a;
 
     padding: 0;
 
@@ -173,11 +173,13 @@ body {
     list-style: none;
     white-space: nowrap;
     padding: 10px 15px;
-    background-color: #fcfcfc;
+    background-color: #1a1a1a;
+    color: #fcfcfc;
     
 }
 .shop_dropdown li:hover { /* Cool hover effect too! */
-    color: #1a1a1a;
+    background-color: #333;
+    color: #5B000B;
     text-shadow: 0 0 20px rgb(250, 241, 244);
 }
 
@@ -191,15 +193,15 @@ body {
 
 
 .product {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 2px solid rgba(0, 0, 0, 0.05);  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
     display: flex;
     flex-direction: column;
 
-    background-color: white;
+    background-color: #1e1e1e;
     border-radius: 15px;
 
-    color:rgb(33, 37, 41);
+    color: #fcfcfc;
     padding: 5px;
     text-align: center;
     width: 100%;
@@ -224,7 +226,8 @@ body {
     border: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-color: #2a2a2a; 
+    color: #fcfcfc;
     
     border-radius: 5px;
     margin-bottom: 20px;
@@ -233,7 +236,7 @@ body {
     align-self: center;
 }
 .product a {
-    color: black;
+    color: #fcfcfc;
     text-decoration: none;
 }
 
@@ -368,11 +371,11 @@ body {
 
 
 .cart_container {
-    background-color: #fcfcfc;
+    background-color: #1e1e1e;
     border-radius: 15px;
     padding: 20px;
     margin: 20px 5%;
-
+    color: #fcfcfc;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: 2px solid rgba(0, 0, 0, 0.05);
 }
@@ -382,20 +385,21 @@ body {
     grid-template-columns: 80px 1.5fr 1fr 1fr;
     align-items: center;
     gap: 20px;
-    background-color: white;
+    background-color: #2a2a2a;
     border-radius: 12px;
     padding: 15px 20px;
     margin-bottom: 15px;
+    color: #fcfcfc;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 2px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid #333;
 }
 
 .cart_item img {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    background-color: white;
+    background-color: #2a2a2a;
     border-radius: 8px;
     padding: 5px;
     border: 2px solid rgba(0, 0, 0, 0.05);
@@ -405,7 +409,7 @@ body {
 .cart_item span {
     font-style: italic;
     font-weight: bold;
-    color: rgb(33, 37, 41);
+    color: #fcfcfc;
 }
 
 
@@ -447,81 +451,73 @@ body {
 /* i learnt that if you use ">" it will only now apply this css to buttons that are children of the parent div, not all buttons within it (descendants) */
 
 
-
-
-
-
-
-
-
-
-.checkout-wrapper {
+.checkout_container {
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
-    background-color: #fcfcfc;
+    padding: 5% 0;
+    background-color: #121212;
 }
 
-.checkout-form-container {
-    background: white;
+.checkout_div {
+    background-color: #1e1e1e;
     width: 100%;
-    max-width: 500px;
-    padding: 40px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid rgba(212, 175, 55, 0.2); 
 }
 
-.form-section {
-    margin-bottom: 30px;
-}
-
-.form-section h3 {
-    font-size: 1.2rem;
-    border-bottom: 2px solid #d4af37; /* Gold underline */
-    padding-bottom: 10px;
+.checkout_divh2 {
+    font-style: italic;
+    color: #fcfcfc;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.step-num {
+.checkout_div h3 {
+    font-size: 1rem;
     color: #d4af37;
-    margin-right: 10px;
+    font-style: italic;
+    margin: 15px 0 10px 0;
 }
 
-.input-group, .input-row {
-    margin-bottom: 15px;
+
+.checkout_div input {
+    background-color: #2a2a2a;
+    color: #fcfcfc;
+    border: 1px solid #444;
+    padding: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: inherit;
+    font-style: italic;
+    box-sizing: border-box; /* FIXES THE OVERFLOW ISSUE */
+}
+
+.checkout_div input:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.input_div {
     display: flex;
     gap: 10px;
 }
 
-input[type="text"], input[type="password"] {
+.payButton {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    outline: none;
-}
-
-input:focus {
-    border-color: #d4af37;
-}
-
-.pay-now-btn {
-    width: 100%;
-    padding: 18px;
+    padding: 15px;
+    margin-top: 25px;
     background-color: #1a1a1a;
     color: #d4af37;
     border: 2px solid #d4af37;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    text-transform: uppercase;
+    font-style: italic;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: 0.2s;
 }
 
-.pay-now-btn:hover {
+.payButton:hover {
     background-color: #d4af37;
-    color: white;
+    color: #1a1a1a;
 }
