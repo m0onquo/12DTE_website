@@ -167,28 +167,6 @@ def view_cart():
 def purchase():
     return render_template("purchase.html", **globalstuff, globalProducts=products_globals)
 #end
-@app.route("/feedback")
-def send_to_webhook(user_input, name, pageref): # Mods 
-    webhook_url = "https://discord.com/api/webhooks/1487994875856293938/ZIFksVOA6A2VimCqLxzjv22OyOy1EeI-dhHosAFX9pVX2-khzFjXNznXB6YKRrMRFmzb"
-    
-    data = {
-        "content": f" Feedback: ** {user_input}",
-        "username": f" ** {name}",
-    }
-
-    response = requests.post(
-        webhook_url, 
-        data=json.dumps(data),
-        headers={'Content-Type': 'application/json'}
-    )
-
-    if response.status_code == 204:
-        print("Successfully sent to your side!")
-    else:
-        print(f"Failed to send. Error: {response.status_code}")
-    return redirect(url_for(f"{pageref}", result = response.status_code ))
-#end
-
 
 if __name__ == '__main__':
     app.run(debug=True)

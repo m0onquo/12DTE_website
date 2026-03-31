@@ -43,7 +43,7 @@
     <div class="checkout_div">
         <h2>Secure Checkout</h2>
         
-        <form action="{{ url_for('purchase') }}" method="POST">
+        <form action="#" method="POST" onsubmit="purchase()">
             <h3> Shipping </h3>
             <input type="text" placeholder="Full Name" required>
             <input type="text" placeholder="Street Address" required>
@@ -52,17 +52,24 @@
                 <input type="text" placeholder="City" required>
                 <input type="text" placeholder="Postcode" required style="width: 120px;">
             </div>
-
+        
             <h3> Payment </h3>
             <input type="text" placeholder="Cardholder Name" required>
             <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required>
             
-            <div Class="input_div">
+            <div class="input_div">
                 <input type="text" placeholder="MM/YY" maxlength="5" required>
                 <input type="password" placeholder="CVV" maxlength="3" required style="width: 80px;">
             </div>
-
+        
             <button type="submit" class="payButton"> [ AUTHORIZE TRANSACTION ] </button>
+            <script>
+                function purchase() {
+                    event.preventDefault(); // THis is to stop it from redirecting after clicking
+                    window.alert("Purchased Successfully!");
+                }
+            </script>
+            
         </form>
     </div>
 </div>
