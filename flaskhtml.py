@@ -138,7 +138,6 @@ def view_cart():
     with sqlite3.connect("Databases/products.db") as database:
         c = database.cursor()
         for item_id, quantity in cart.items():
-            # SAFETY CHECK: skip if item_id isn't a number
             if not str(item_id).isdigit():
                 continue 
             
