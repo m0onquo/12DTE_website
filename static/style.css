@@ -1,3 +1,9 @@
+/*========================================    
+    CSS stylesheet for website
+    File: cart.html
+    Author: Carter Baxendale
+    Date: April 2026
+========================================*/
 body {
     margin: 0; /* Removes the gap between top of the page and navbar */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -6,6 +12,26 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Homepage */
+.main a {
+    text-decoration: none;
+}
+.main a button { /* Just copied from another button */
+    width: 80%;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left:10%;
+    margin-right:10%;
+}
 
 /* Navbar Stuff */
 .nav_main {
@@ -394,6 +420,7 @@ body {
     border-radius: 15px;
     padding: 30px;
     margin: 20px 5%;
+    padding-top: 10px;
     color: #fcfcfc;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -451,6 +478,7 @@ body {
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin: auto;
 }
 
 .cart_container > button a {

@@ -1,3 +1,10 @@
+<!--========================================    
+    Shop page for shop website
+    File: shop.html
+    Author: Carter Baxendale
+    Date: April 2026
+========================================-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +66,7 @@
                         <p>${{ p.price }}</p> 
                     </div>
                 </a>
-                <a href="{{ url_for('add_cart', item_id=p.id) }}"> <button>[ Add To Cart ]</button> </a>
+                <a href="{{ url_for('add_cart', item_id=p.id) }}"> <button> ★ Add To Cart ★ </button> </a>
             </div>
             {% endfor %}
         </div>
