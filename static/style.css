@@ -207,6 +207,8 @@ body {
 
 
 .product {
+    background: linear-gradient(145deg, #1e1e1e, #161616);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
@@ -276,19 +278,18 @@ body {
 
 .main_content {
     display: grid;
-    grid-template-columns: 4fr 6fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0;
-    margin: 40px 5%;
-    background-color: #fcfcfc;
-
+    margin: 60px 5%;
+    background-color: #1e1e1e;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
-    border: 2px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     margin-top: 5%;
-    
 }
-.cart_text{
+
+.cart_text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -301,61 +302,63 @@ body {
     min-height: 450px;
     object-fit: contain;
     display: block;
-    background-color: #1c1c1c;
-    padding: 20px;
+    background-color: #121212;
+    padding: 40px;
     box-sizing: border-box;
 }
 
 .displayProduct_info {
-    background-color: #1e1e1e;
-    padding: 40px;
+    background-color: transparent;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    outline: none;
-    border-left: 2px solid rgba(0, 0, 0, 0.05);
+    border-left: 1px solid #333;
 }
 
 .displayProduct_info h1 {
     font-size: 2.8rem;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    color: #fcfcfc;
+    letter-spacing: -1px;
 }
 
 .displayProduct_info h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
+    color: #ff4d4d;
+    font-weight: 800;
 }
 
 .product_description {
     margin-top: 20px;
-    padding: 15px;
-    background-color: white;
-    outline: black solid 2px;
-    font-style: italic;
-    line-height: 1.5;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 3px solid #ff4d4d;
+    color: #ccc;
+    line-height: 1.6;
 }
 
 .buy_button {
     width: 100%;
     padding: 20px;
-    margin-top: auto;
-    background-color: white;
-    outline: black solid 4px;
+    margin-top: 40px;
+    background-color: #ff4d4d;
     border: none;
-    font-size: 2rem;
-    font-style: italic;
+    color: white;
+    font-size: 1.5rem;
     font-weight: bold;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-
-    /* pro transition to make the color for hover fade into it instead of instant change */
-    transition: 0.2s ease;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .buy_button:hover {
-    background-color: #1a1a1a;
-    color: white;
+    background-color: #ff5e5e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 77, 77, 0.4);
 }
 
 
@@ -389,80 +392,80 @@ body {
 .cart_container {
     background-color: #1e1e1e;
     border-radius: 15px;
-    padding: 20px;
+    padding: 30px;
     margin: 20px 5%;
     color: #fcfcfc;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 2px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .cart_item {
     display: grid;
-    grid-template-columns: 80px 1.5fr 1fr 1fr;
+    grid-template-columns: 80px 2fr 1fr 1fr;
     align-items: center;
     gap: 20px;
-    background-color: #2a2a2a;
-    border-radius: 12px;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    color: #fcfcfc;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #333;
+    background-color: transparent;
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+    margin-bottom: 0;
 }
 
 .cart_item img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
-    background-color: #2a2a2a;
-    border-radius: 8px;
+    background-color: #121212;
+    border-radius: 10px;
     padding: 5px;
-    border: 2px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-
 .cart_item span {
-    font-style: italic;
     font-weight: bold;
     color: #fcfcfc;
 }
 
-
 .cart_item button {
-    border: none;
+    border: 1px solid rgba(255, 77, 77, 0.3);
+    background-color: rgba(255, 77, 77, 0.1);
+    color: #ff4d4d;
+    border-radius: 6px;
+    padding: 8px 16px;
     font-family: inherit;
-    outline: black solid 2px;
-    background-color: white;
-    border-radius: 2px;
-    padding: 2px 10px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .cart_item button:hover {
-    background-color: rgb(149, 202, 255);
+    background-color: #ff4d4d;
     color: white;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
 }
-
 
 .cart_container > button {
     width: 100%;
-    margin-top: 20px;
-    background-color: #1a1a1a;
-    color: black;
-    font-size: 1.5rem;
-    font-style: italic;
-    outline: black solid 3px;
+    margin-top: 30px;
+    background-color: #ff4d4d;
     border: none;
-    padding: 10px;
+    padding: 18px;
+    border-radius: 12px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 .cart_container > button a {
     text-decoration: none;
     display: block;
     width: 100%;
-    height: 100%;
-    color: #fcfcfc;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.cart_container > button:hover {
+    background-color: #ff5e5e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 77, 77, 0.3);
 }
 /* i learnt that if you use ">" it will only now apply this css to buttons that are children of the parent div, not all buttons within it (descendants) */
 
@@ -478,63 +481,68 @@ body {
     background-color: #1e1e1e;
     width: 100%;
     max-width: 450px;
-    padding: 25px;
+    padding: 40px;
     border-radius: 15px;
-    border: 2px solid rgba(212, 175, 55, 0.2); 
+    border: 1px solid #333;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .checkout_divh2 {
-    font-style: italic;
+    font-size: 2rem;
     color: #fcfcfc;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .checkout_div h3 {
-    font-size: 1rem;
-    color: #d4af37;
-    font-style: italic;
-    margin: 15px 0 10px 0;
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 20px 0 8px 0;
 }
 
-
 .checkout_div input {
-    background-color: #2a2a2a;
+    background-color: #121212;
     color: #fcfcfc;
-    border: 1px solid #444;
-    padding: 12px;
+    border: 1px solid #333;
+    padding: 15px;
     margin-bottom: 10px;
     width: 100%;
     font-family: inherit;
-    font-style: italic;
-    box-sizing: border-box; /* FIXES THE OVERFLOW ISSUE */
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 .checkout_div input:focus {
     outline: none;
-    border-color: #d4af37;
+    border-color: #ff4d4d;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.2);
+    background-color: #161616;
 }
 
 .input_div {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .payButton {
     width: 100%;
-    padding: 15px;
-    margin-top: 25px;
-    background-color: #1a1a1a;
-    color: #d4af37;
-    border: 2px solid #d4af37;
+    height: 60px;
+    margin-top: 30px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 12px;
     font-size: 1.2rem;
     font-weight: bold;
-    font-style: italic;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.3s ease;
 }
 
 .payButton:hover {
-    border-color: #ff4d4d;
-    box-shadow: 0 0 12px rgba(255, 77, 77, 0.4);
-    transition: all 0.3s ease;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+    background-color: #ff5e5e;
 }
