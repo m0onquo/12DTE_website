@@ -60,6 +60,8 @@
                         <a href="{{ url_for('remove_from_cart', item_id=item.id) }}"><button>-</button></a>
                         Quantity: {{ item.quantity }}
                         <a href="{{ url_for('add_cart', item_id=item.id) }}"><button>+</button></a>
+
+                        <a href="{{ url_for('remove_all_from_cart', item_id=item.id) }}"><button>❌</button></a>
                     </span>
                     
                     <span>Subtotal: ${{ item.subtotal }}</span>
