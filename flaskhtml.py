@@ -133,13 +133,7 @@ def remove_all_from_cart(item_id):
     cart = session.get('cart', {})
     string_id = str(item_id)
 
-    if string_id in cart:
-        if cart[string_id] > 1:
-            cart[string_id] = -1
-        else:
-            cart.pop(string_id)
-        #end
-    #end
+    cart.pop(string_id)
             
     session['cart'] = cart
     session.modified = True

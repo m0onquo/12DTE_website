@@ -45,7 +45,7 @@
             </div>
         </div>
     </nav>
-    <nav class="nav_bottom"> some text thingy placeholder </nav>
+    <nav class="nav_bottom"> FREE shipping on orders above $1750! </nav>
     <div name="main">
         <h1 class="cart_text">Your Shopping Cart</h1>
 
@@ -61,7 +61,7 @@
                         Quantity: {{ item.quantity }}
                         <a href="{{ url_for('add_cart', item_id=item.id) }}"><button>+</button></a>
 
-                        <a href="{{ url_for('remove_all_from_cart', item_id=item.id) }}"><button>❌</button></a>
+                        <a href="{{ url_for('remove_all_from_cart', item_id=item.id) }}"><button>×</button></a>
                     </span>
                     
                     <span>Subtotal: ${{ item.subtotal }}</span>
